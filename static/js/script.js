@@ -1,7 +1,7 @@
 
 let selecionado = document.querySelector('#selecionado')
 let horarioSelecionado = null
-let linha = evento.target.parentElement
+
 let btnAgendar = document.querySelector('buttonAgendar')
 
 linha.addEventListener('click', clicar)
@@ -10,6 +10,7 @@ situacao = linha.querySelector('td').innerText[1]
 
 
 function clicar() {
+    let linha = evento.target.parentElement
 
     
 
