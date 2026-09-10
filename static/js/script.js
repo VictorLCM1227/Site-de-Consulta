@@ -1,23 +1,26 @@
-let horarios = document.querySelectorAll('td[id]')
+//let horarios = document.querySelectorAll('tr[id]')
+let selecionado = document.querySelector('#selecionado')
+let horarioSelecionado = null
+let linha = evento.target.parentElement
 
-horarios.forEach(function(horario) {
-
-    horario.addEventListener('click', clicar)
-
-})
+linha.addEventListener('click', clicar)
 
 
-function clicar(evento) {
 
-    let horarioClicado = evento.target
+function clicar() {
 
-    if (horarioClicado.innerText == 'Livre') {
+    selecionado = linha.querySelector('td').innerText
 
-        horarioClicado.innerText = 'Ocupado'
+    if (linha.querySelectorAll('td')[1].innerText == 'Livre') {
+
+        horarioSelecionado = horarioClicado
+        selecionado.innerHTML = `Horário escolhido: ${horarioSelecionado.innerText}`
+        linha.querySelectorAll('td')[1].innerText = 'Ocupado'
+
 
     } else {
 
-        horarioClicado.innerText = 'Livre'
+        linha.querySelectorAll('td')[1].innerText = 'Livre'
 
     }
 
