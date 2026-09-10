@@ -1,4 +1,4 @@
-var oito = document.querySelector('td#oito')
+var oito = window.document.getElementById('oito')
 oito.addEventListener('click', clicar)
 
 function clicar() {
