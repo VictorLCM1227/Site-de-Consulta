@@ -1,10 +1,24 @@
-let oito = document.querySelector('#oito')
-oito.addEventListener('click', clicar)
+let horarios = document.querySelectorAll('td[id]')
 
-function clicar() {
-    if (oito.innerText == 'Livre') {
-        oito.innerText = 'Ocupado'
+horarios.forEach(function(horario) {
+
+    horario.addEventListener('click', clicar)
+
+})
+
+
+function clicar(evento) {
+
+    let horarioClicado = evento.target
+
+    if (horarioClicado.innerText == 'Livre') {
+
+        horarioClicado.innerText = 'Ocupado'
+
     } else {
-        oito.innerText = 'Livre'
+
+        horarioClicado.innerText = 'Livre'
+
     }
+
 }
