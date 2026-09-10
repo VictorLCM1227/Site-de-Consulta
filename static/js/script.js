@@ -2,5 +2,5 @@ var oito = document.querySelector('td#oito')
 oito.addEventListener('click', clicar)
 
 function clicar() {
-    oito.innerHTML = 'Ocupado'
+    oito.innerText = 'Ocupado'
 }
