@@ -1,6 +1,10 @@
-var oito = window.document.getElementById('oito')
+let oito = document.querySelector('#oito')
 oito.addEventListener('click', clicar)
 
 function clicar() {
-    oito.innerText = 'Ocupado'
+    if (oito.innerText == 'Livre') {
+        oito.innerText = 'Ocupado'
+    } else {
+        oito.innerText = 'Livre'
+    }
 }
