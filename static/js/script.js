@@ -4,22 +4,21 @@ let horarioSelecionado = null
 
 let btnAgendar = document.querySelector('buttonAgendar')
 
-linha.addEventListener('click', clicar)
-horarioSelecionado = linha.querySelector('td').innerText[0]
-situacao = linha.querySelector('td').innerText[1]
+let linhas = document.querySelectorAll('tr[id]')
+
+linhas.forEach(function(linha) {
+    linha.addEventListener('click',clicar)
+})
 
 
-function clicar() {
-    let linha = evento.target.parentElement
-
+function clicar(evento) {
+    let linha = evento.currentTarget
+    horarioSelecionado = linha.querySelector('td').innerText
+    let situacao = linha.querySelector('td').innerText[1]
     
-
-    if (situacao == 'Livre') {
+    if (situacao.innerText == 'Livre') {
 
         selecionado.innerText = `Horário escolhido: ${horarioSelecionado.innerText}`
-        situacao = 'Ocupado'
-
-
     } else {
 
         situacao = 'Livre'
