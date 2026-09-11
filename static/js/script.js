@@ -13,16 +13,14 @@ linhas.forEach(function(linha) {
 
 function clicar(evento) {
     let linha = evento.currentTarget
-    horarioSelecionado = linha.querySelector('td').innerText
-    let situacao = linha.querySelector('td').innerText[1]
+
+    horarioSelecionado = linha.querySelectorAll('td')[0].innerText
+
+    let situacao = linha.querySelectorAll('td')[1]
     
     if (situacao.innerText == 'Livre') {
 
-        selecionado.innerText = `Horário escolhido: ${horarioSelecionado.innerText}`
-    } else {
-
-        situacao = 'Livre'
-
+        selecionado.innerText = `Horário escolhido: ${horarioSelecionado}`
     }
 
 }
